@@ -2,7 +2,14 @@ This is a web app built in Ruby on Rails intended to provide users with the mean
 
 If this project is continued and additional collaborators are picked up, this file will need additional documentation to help anyone not familiar with Ruby on Rails.
 
-Ideally, this project will be styled using Bootstrap before the end of the semester, but it will need to be fully functional before I bother with aesthetics.
+This project uses:
+
+-Ruby on Rails
+-CSS
+-Sass
+-HTML
+-SQLite
+-Bootstrap
 
 # README
 
