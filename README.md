@@ -1,3 +1,9 @@
+This is a web app built in Ruby on Rails intended to provide users with the means to plan out a desirable Gwent deck in The Witcher 3: Wild Hunt without having to track down all of the cards in-game.
+
+If this project is continued and additional collaborators are picked up, this file will need additional documentation to help anyone not familiar with Ruby on Rails.
+
+Ideally, this project will be styled using Bootstrap before the end of the semester, but it will need to be fully functional before I bother with aesthetics.
+
 # README
 
 This README would normally document whatever steps are necessary to get the
