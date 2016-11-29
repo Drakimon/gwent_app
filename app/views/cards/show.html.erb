@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @card.name %></h1>
+
+<p>
+  <strong>Faction: </strong>
+  <%= @card.deck %>
+</p>
+
+<p>
+  <strong>Card Type: </strong>
+  <%= @card.role %>
+</p>
+
+<p>
+  <strong>Strength: </strong>
+  <%= @card.strength %>
+</p>
+
+<p>
+  <strong>Combat Type: </strong>
+  <%= @card.combatType %>
+</p>
+
+<p>
+  <strong>Card Ability: </strong>
+  <%= @card.cardAbility %>
+</p>
+
+<p>
+  <strong>Description: </strong>
+  <%= @card.description %>
+</p>
+
+<!--<%= link_to 'Edit', edit_card_path(@card) %> |-->
+<%= link_to 'Back', cards_path %>

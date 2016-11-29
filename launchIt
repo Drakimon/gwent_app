@@ -1,0 +1,4 @@
+#!/gwent_app/
+# Script to start the server
+
+rails server -p $PORT -b $IP

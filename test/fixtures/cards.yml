@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cardId: 
+  deck: MyString
+  strength: 
+  combatType: MyString
+  cardAbility: MyString
+  description: MyString
+
+two:
+  cardId: 
+  deck: MyString
+  strength: 
+  combatType: MyString
+  cardAbility: MyString
+  description: MyString

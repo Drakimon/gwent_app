@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @deck.deckName %></h1>
+
+<p>
+  <strong>Deckid:</strong>
+  <%= @deck.deckId %>
+</p>
+
+<p>
+  <strong>Faction:</strong>
+  <%= @deck.faction %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @deck.userId %>
+</p>
+
+<table>
+  <thead align="left">
+    <tr>
+      <th>Card Name</th>
+      <th>Faction</th>
+      <th>Card Type</th>
+      <th>Strength</th>
+      <th>Combat Type</th>
+      <th>Card Ability</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody align="left">
+    <% @deck_cards.each do |cardId| %>
+      <% c = @cards.find(cardId) %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= c.deck %></td>
+        <td><%= c.role %></td>
+        <td><%= c.strength %></td>
+        <td><%= c.combatType %></td>
+        <td><%= c.cardAbility %></td>
+        <td><%= c.description %></td>
+        <td><%= link_to 'Show', c %></td>
+        <td><%= link_to 'Edit', edit_deck_card_path(cardId) %></td>
+        <td><%= link_to 'Destroy', cardId, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!--<%= link_to 'Edit', edit_deck_path(@deck) %> |-->
+<%= link_to 'Back', decks_path %>
