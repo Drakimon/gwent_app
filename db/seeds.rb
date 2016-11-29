@@ -4,7 +4,7 @@
 #   Card.create(name:, deck:, strength:, role:, combatType:, cardAbility:, description:)
 #   Deck.create(deckName:, faction:, user:)
 #   DeckCard.create(deck:, card:)
-#   User.create(username:, password:)
+#   User.create(username:)
 
 # All the cards
 Card.create(name:"Arachas", deck:"Monsters", role:"Basic", strength:4, combatType:"Melee", cardAbility:"Muster", description:"")
@@ -20,7 +20,7 @@ Card.create(name:"Crone Whispess", deck:"Monsters", role:"Basic", strength:6, co
 Card.create(name:"Draug", deck:"Monsters", role:"Basic", strength:10, combatType:"Melee", cardAbility:"Immune to special", description:"")
 Card.create(name:"Earth Elemental", deck:"Monsters", role:"Basic", strength:6, combatType:"Siege", cardAbility:"None", description:"")
 # A test user
-User.create(username:"Test", password:"Insecure")
+User.create(username:"Test", password: "testingForProblems")
 # A test deck
 Deck.create(deckName:"My First Deck", faction:"Monsters", user:User.find(1))
 # A couple of cards in the test deck
