@@ -4,10 +4,10 @@ If this project is continued and additional collaborators are picked up, this fi
 
 This project uses:
 
--Ruby on Rails
+-Ruby on Rails (meaning both Ruby and Rails)
 -CSS
 -Sass
--HTML
+-HTML5
 -SQLite
 -Bootstrap
 
