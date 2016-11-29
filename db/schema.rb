@@ -25,17 +25,16 @@ ActiveRecord::Schema.define(version: 20161128233910) do
   end
 
   create_table "deck_cards", force: :cascade do |t|
-    t.integer  "deckId"
-    t.integer  "cardId"
+    t.integer  "deck_id"
+    t.integer  "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "decks", force: :cascade do |t|
-    t.integer  "deckId"
     t.string   "deckName"
     t.string   "faction"
-    t.integer  "userId"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

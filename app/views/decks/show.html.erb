@@ -2,19 +2,14 @@
 <h1><%= @deck.deckName %></h1>
 
 <p>
-  <strong>Deckid:</strong>
-  <%= @deck.deckId %>
-</p>
-
-<p>
   <strong>Faction:</strong>
   <%= @deck.faction %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Userid:</strong>
-  <%= @deck.userId %>
-</p>
+  <%= @deck.user_id %>
+</p> |-->
 
 <table>
   <thead align="left">
@@ -31,8 +26,8 @@
   </thead>
 
   <tbody align="left">
-    <% @deck_cards.each do |cardId| %>
-      <% c = @cards.find(cardId) %>
+    <% @deck.deck_cards.each do |card_id| %>
+      <% c = @cards.find(card_id) %>
       <tr>
         <td><%= c.name %></td>
         <td><%= c.deck %></td>
@@ -42,12 +37,12 @@
         <td><%= c.cardAbility %></td>
         <td><%= c.description %></td>
         <td><%= link_to 'Show', c %></td>
-        <td><%= link_to 'Edit', edit_deck_card_path(cardId) %></td>
-        <td><%= link_to 'Destroy', cardId, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_deck_card_path(card_id) %></td>
+        <td><%= link_to 'Destroy', card_id, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<!--<%= link_to 'Edit', edit_deck_path(@deck) %> |-->
+<!-- <%= link_to 'Edit', edit_deck_path(@deck) %> |-->
 <%= link_to 'Back', decks_path %>

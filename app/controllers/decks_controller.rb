@@ -10,7 +10,6 @@ class DecksController < ApplicationController
   # GET /decks/1
   # GET /decks/1.json
   def show
-    @deck_cards = DeckCard.where(:deckId => @deck.deckId)
     @cards = Card.all
   end
 
