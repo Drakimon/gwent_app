@@ -46,8 +46,7 @@ class DecksController < ApplicationController
         format.html { redirect_to @deck, notice: 'Deck was successfully updated.' }
         format.json { render :show, status: :ok, location: @deck }
       else
-        format.html { render :edit }
-        format.json { render json: @deck.errors, status: :unprocessable_entity }
+        render 'edit'
       end
     end
   end

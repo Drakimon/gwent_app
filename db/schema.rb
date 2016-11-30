@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20161129074114) do
   end
 
   create_table "decks", force: :cascade do |t|
-    t.integer  "deckName"
+    t.string   "deckName"
     t.string   "faction"
     t.string   "user_id"
     t.datetime "created_at", null: false
