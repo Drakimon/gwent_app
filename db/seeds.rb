@@ -203,7 +203,17 @@ Card.create(name:"Vrihedd Brigade Veteran", deck:"Scoia'tael", role:"Basic", str
 Card.create(name:"Yaevinn", deck:"Scoia'tael", role:"Basic", strength:6, combatType:"Melee / Range", cardAbility:"Agile", description:"")
 
 # A test user
-User.create(username:"Test", password: "testingForProblems")
+User.create(username:"Drake", password:"copperdog1", password_confirmation: "copperdog1", admin: true)
+User.create(username:"Bill", password:"Billiam", password_confirmation: "Billiam")
+User.create(username:"Frank", password:"I'veCoveredWarsYouKnow", password_confirmation: "I'veCoveredWarsYouKnow")
+
+99.times do |n|
+  name    = Faker::Name.name
+  password= "password"
+  User.create!(username:  name,
+               password:               password,
+               password_confirmation:  password)
+end
 # A test deck
 Deck.create(deckName:"My First Deck", faction:"Monsters", user:User.find(1))
 # A couple of cards in the test deck
