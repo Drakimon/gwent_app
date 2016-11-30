@@ -208,5 +208,6 @@ User.create(username:"Test", password: "testingForProblems")
 Deck.create(deckName:"My First Deck", faction:"Monsters", user:User.find(1))
 # A couple of cards in the test deck
 DeckCard.create(deck:Deck.find(1), card:Card.find(1))
+DeckCard.create(deck:Deck.find(1), card:Card.find(1))
 DeckCard.create(deck:Deck.find(1), card:Card.find(2))
   
