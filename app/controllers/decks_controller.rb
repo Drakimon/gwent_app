@@ -20,34 +20,31 @@ class DecksController < ApplicationController
 
   # GET /decks/1/edit
   def edit
+    @deck = Deck.find(params[:id])
   end
 
   # POST /decks
   # POST /decks.json
   def create
     @deck = Deck.new(deck_params)
-
-    respond_to do |format|
-      if @deck.save
-        format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
-        format.json { render :show, status: :created, location: @deck }
-      else
-        format.html { render :new }
-        format.json { render json: @deck.errors, status: :unprocessable_entity }
-      end
+    @deck.user = current_user
+    if @deck.save
+      flash[:success] = "Deck successfully created"
+      redirect_to @deck
+    else
+      render 'new'
     end
   end
 
   # PATCH/PUT /decks/1
   # PATCH/PUT /decks/1.json
   def update
-    respond_to do |format|
-      if @deck.update(deck_params)
-        format.html { redirect_to @deck, notice: 'Deck was successfully updated.' }
-        format.json { render :show, status: :ok, location: @deck }
-      else
-        render 'edit'
-      end
+    @deck = Deck.find(params[:id])
+    if @deck.update_attributes(deck_params)
+      flash[:success] = "Changes saved"
+      redirect_to @deck
+    else
+      render 'edit'
     end
   end
 
@@ -69,6 +66,6 @@ class DecksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deck_params
-      params.require(:deck).permit(:deckId, :faction, :userId)
+      params.require(:deck).permit(:deckName, :faction, :user_id)
     end
 end

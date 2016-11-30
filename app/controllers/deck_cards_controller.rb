@@ -69,6 +69,6 @@ class DeckCardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deck_card_params
-      params.require(:deck_card).permit(:deckCardId, :deckId, :cardId)
+      params.require(:deck_card).permit(:deck_id, :card_id)
     end
 end
