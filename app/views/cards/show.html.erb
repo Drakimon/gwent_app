@@ -25,11 +25,12 @@
   <strong>Card Ability: </strong>
   <%= @card.cardAbility %>
 </p>
-
+<% if @card.description != "" %>
 <p>
   <strong>Description: </strong>
   <%= @card.description %>
 </p>
+<% end %>
 
-<!--<%= link_to 'Edit', edit_card_path(@card) %> |-->
-<%= link_to 'Back', cards_path %>
+<!--<%= link_to "Edit", edit_card_path(@card) %> |-->
+<!--<%= link_to "Back", cards_path %> -->

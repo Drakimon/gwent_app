@@ -11,7 +11,7 @@
       <th>Strength</th>
       <th>Combat Type</th>
       <th>Card Ability</th>
-      <th>Description</th>
+      <!-- <th>Description</th> -->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,8 +24,8 @@
         <td><%= card.strength %></td>
         <td><%= card.combatType %></td>
         <td><%= card.cardAbility %></td>
-        <td><%= card.description %></td>
-        <td><%= link_to 'Inspect', card %></td>
+        <!-- <td><%= card.description %></td> -->
+        <td><li><%= link_to 'Inspect', card %></li></td>
         <!--<td><%= link_to 'Edit', edit_card_path(card) %></td>-->
         <!--<td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
