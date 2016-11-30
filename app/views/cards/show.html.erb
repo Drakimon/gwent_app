@@ -1,36 +1,47 @@
-<p id="notice"><%= notice %></p>
 <h1><%= @card.name %></h1>
+<body>
+  <section>
+    <p>
+      <strong>Faction: </strong>
+      <%= @card.deck %>
+    </p>
+  
+    <p>
+      <strong>Card Type: </strong>
+      <%= @card.role %>
+    </p>
+  
+    <p>
+      <strong>Strength: </strong>
+      <%= @card.strength %>
+    </p>
+  
+    <p>
+      <strong>Combat Type: </strong>
+      <%= @card.combatType %>
+    </p>
+  
+    <p>
+      <strong>Card Ability: </strong>
+      <%= @card.cardAbility %>
+    </p>
+    <% if @card.description != "" %>
+    <p>
+      <strong>Description: </strong>
+      <%= @card.description %>
+    </p>
+    <% end %>
+  </section>
 
-<p>
-  <strong>Faction: </strong>
-  <%= @card.deck %>
-</p>
-
-<p>
-  <strong>Card Type: </strong>
-  <%= @card.role %>
-</p>
-
-<p>
-  <strong>Strength: </strong>
-  <%= @card.strength %>
-</p>
-
-<p>
-  <strong>Combat Type: </strong>
-  <%= @card.combatType %>
-</p>
-
-<p>
-  <strong>Card Ability: </strong>
-  <%= @card.cardAbility %>
-</p>
-<% if @card.description != "" %>
-<p>
-  <strong>Description: </strong>
-  <%= @card.description %>
-</p>
-<% end %>
-
+  <aside>
+    <%= form_for(@deckCard) do |f| %>
+      <div class="form-group">
+        <%= f.collection_select(:deck, @decks, :id, :deckName) %>
+        <%= hidden_field_tag(:card, @card) %>
+        <%= f.submit "Add card", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </aside>
+</body>
 <!--<%= link_to "Edit", edit_card_path(@card) %> |-->
 <!--<%= link_to "Back", cards_path %> -->

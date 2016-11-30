@@ -1,16 +1,5 @@
 class DeckCardsController < ApplicationController
-  before_action :set_deck_card, only: [:show, :edit, :update, :destroy]
-
-  # GET /deck_cards
-  # GET /deck_cards.json
-  def index
-    @deck_cards = DeckCard.all
-  end
-
-  # GET /deck_cards/1
-  # GET /deck_cards/1.json
-  def show
-  end
+  before_action :set_deck_card, only: [:show, :update, :destroy]
 
   # GET /deck_cards/new
   def new
@@ -25,15 +14,11 @@ class DeckCardsController < ApplicationController
   # POST /deck_cards.json
   def create
     @deck_card = DeckCard.new(deck_card_params)
-
-    respond_to do |format|
-      if @deck_card.save
-        format.html { redirect_to @deck_card, notice: 'Deck card was successfully created.' }
-        format.json { render :show, status: :created, location: @deck_card }
-      else
-        format.html { render :new }
-        format.json { render json: @deck_card.errors, status: :unprocessable_entity }
-      end
+    if @deck_card.save
+      flash[:success] = "Card successfully added to deck!"
+      redirect_to @deck_card.deck
+    else
+      redirect_to @deck_card.card
     end
   end
 

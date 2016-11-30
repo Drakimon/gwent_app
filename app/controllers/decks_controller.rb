@@ -2,6 +2,7 @@ class DecksController < ApplicationController
   before_action :set_deck, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:index, :show, :new, :edit, :create, :update, :destroy]
   before_action :correct_user, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user, only: [:superindex]
 
   # GET /decks
   # GET /decks.json

@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user, only: [:edit, :new, :update, :create, :destroy]
 
   # GET /cards
   # GET /cards.json
@@ -10,6 +11,8 @@ class CardsController < ApplicationController
   # GET /cards/1
   # GET /cards/1.json
   def show
+    @decks = current_user.decks
+    @deckCard = DeckCard.new
   end
 
   # GET /cards/new

@@ -13,20 +13,15 @@
 
   <div class="field">
     <%= f.label :deckName %>
-    <%= f.text_field :deckName %>
+    <%= f.text_field :deckName, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :faction %>
-    <%= f.text_field :faction %>
+    <%= f.text_field :faction, class: "form-control" %>
   </div>
-<!--
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div> -->
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save changes", class: "btn btn-primary" %>
   </div>
 <% end %>
