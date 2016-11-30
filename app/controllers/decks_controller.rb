@@ -1,10 +1,12 @@
 class DecksController < ApplicationController
   before_action :set_deck, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
   # GET /decks
   # GET /decks.json
   def index
-    @decks = Deck.all
+    @decks = current_user.decks
   end
 
   # GET /decks/1
@@ -67,5 +69,10 @@ class DecksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def deck_params
       params.require(:deck).permit(:deckName, :faction, :user_id)
+    end
+    
+    def correct_user
+      @user = @deck.user
+      redirect_to(root_url) unless current_user?(@user)
     end
 end
