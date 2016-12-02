@@ -36,8 +36,8 @@
   <aside>
     <%= form_for(@deckCard) do |f| %>
       <div class="form-group">
-        <%= f.collection_select(:deck, @decks, :id, :deckName) %>
-        <%= hidden_field_tag(:card, @card) %>
+        <%= f.collection_select(:deck_id, @decks, :id, :deckName) %>
+        <%= hidden_field_tag(:card_id, @card.id) %>
         <%= f.submit "Add card", class: "btn btn-primary" %>
       </div>
     <% end %>

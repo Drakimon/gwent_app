@@ -13,6 +13,8 @@ class DeckCardsController < ApplicationController
   # POST /deck_cards
   # POST /deck_cards.json
   def create
+    @card = Card.find(params[:card_id])
+    params[:deck_card][:card_id] = @card.id
     @deck_card = DeckCard.new(deck_card_params)
     if @deck_card.save
       flash[:success] = "Card successfully added to deck!"
