@@ -29,7 +29,8 @@ class DeckCardsController < ApplicationController
   def update
     respond_to do |format|
       if @deck_card.update(deck_card_params)
-        format.html { redirect_to @deck_card, notice: 'Deck card was successfully updated.' }
+        flash[:success] = "Deck card was successfully updated."
+        redirect_to @deck_card.deck
         format.json { render :show, status: :ok, location: @deck_card }
       else
         format.html { render :edit }
@@ -41,11 +42,10 @@ class DeckCardsController < ApplicationController
   # DELETE /deck_cards/1
   # DELETE /deck_cards/1.json
   def destroy
+    d = @deck_card.deck
     @deck_card.destroy
-    respond_to do |format|
-      format.html { redirect_to deck_cards_url, notice: 'Deck card was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:success] = "Card was successfully removed from the deck"
+    redirect_to d
   end
 
   private

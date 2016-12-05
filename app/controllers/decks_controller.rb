@@ -56,8 +56,8 @@ class DecksController < ApplicationController
   def destroy
     @deck.destroy
     respond_to do |format|
-      format.html { redirect_to decks_url, notice: 'Deck was successfully destroyed.' }
-      format.json { head :no_content }
+      flash[:success] = "Deck was successfully destroyed"
+      redirect_to decks_url
     end
   end
 
