@@ -27,7 +27,7 @@
 
   <tbody align="left">
     <% @deck.deck_cards.each do |card_id| %>
-      <% c = @cards.find(card_id) %>
+      <% c = card_id.card %>
       <tr>
         <td><%= c.name %></td>
         <td><%= c.deck %></td>

@@ -8,7 +8,8 @@ This project uses:
 -CSS
 -Sass
 -HTML5
--SQLite
+-Used SQLite for a while, but that has since been dropped for
+-PostgreSQL
 -Bootstrap
 
 # README
@@ -16,22 +17,24 @@ This project uses:
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Here is how you start this whole thing up, once you have pulled from git.
 
-* Ruby version
+$ gem install rails
+(Assuming that you have installed postgresql already, if you are doing this
+in the c9.io IDE like I am, these instructions should work without any further
+tweaking)
+$ sudo service postgresql start
+$ bundle
+$ rails db:setup
+- or, if you have already set up the database and want to reset it -
+$ rails db:reset
 
-* System dependencies
+If the database is, for any reason, not populated with cards, you can manually
+apply the seed with
+$ rails db:seed
 
-* Configuration
+and any migrations that need to happen can be initiated with
+$ rails db:migrate
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To start the server (again, this will need to be tweaked if not used on c9.io)
+$ rails s -b $IP -p $PORT
