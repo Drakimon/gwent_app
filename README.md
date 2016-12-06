@@ -7,7 +7,12 @@ If this project is continued and additional collaborators are picked up, this fi
 
 This project uses:
 
-Ruby on Rails (meaning both Ruby and Rails), CSS, Sass, HTML5, SQLite for a while, but that has since been dropped for PostgreSQL, Bootstrap
+- Ruby on Rails (meaning both Ruby and Rails)
+- CSS
+- Sass
+- HTML5
+- SQLite for a while, but that has since been dropped for PostgreSQL
+- Bootstrap
 
 Here is how you start this whole thing up, once you have pulled from git.
 
@@ -18,7 +23,7 @@ tweaking)
 $ sudo service postgresql start
 $ bundle
 $ rails db:setup
-- or, if you have already set up the database and want to reset it -
+-or, if you have already set up the database and want to reset it-
 $ rails db:reset
 
 If the database is, for any reason, not populated with cards, you can manually
