@@ -55,10 +55,8 @@ class DecksController < ApplicationController
   # DELETE /decks/1.json
   def destroy
     @deck.destroy
-    respond_to do |format|
-      flash[:success] = "Deck was successfully destroyed"
-      redirect_to decks_url
-    end
+    flash[:success] = "Deck was successfully destroyed"
+    redirect_to decks_url
   end
 
   private

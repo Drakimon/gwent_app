@@ -18,7 +18,11 @@
 
   <div class="field">
     <%= f.label :faction %>
-    <%= f.text_field :faction, class: "form-control" %>
+    <%= f.select :faction, [
+        ["Monsters"],
+        ["Northern Realms"],
+        ["Nilfgaard"],
+        ["Scoia'tel"]], {}, {class: 'form-control'} %>
   </div>
 
   <div class="actions">
