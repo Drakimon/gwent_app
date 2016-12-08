@@ -6,7 +6,7 @@
 #   DeckCard.create(deck:, card:)
 #   User.create(username:)
 
-# All the cards
+# All the Gwent cards in Witcher 3: Wild Hunt
 Card.create(name:"Arachas", deck:"Monsters", role:"Basic", strength:4, combatType:"Melee", cardAbility:"Muster", description:"")
 Card.create(name:"Arachas", deck:"Monsters", role:"Basic", strength:4, combatType:"Melee", cardAbility:"Muster", description:"")
 Card.create(name:"Arachas", deck:"Monsters", role:"Basic", strength:4, combatType:"Melee", cardAbility:"Muster", description:"")
@@ -202,22 +202,24 @@ Card.create(name:"Vrihedd Brigade Veteran", deck:"Scoia'tael", role:"Basic", str
 Card.create(name:"Vrihedd Brigade Veteran", deck:"Scoia'tael", role:"Basic", strength:5, combatType:"Melee / Range", cardAbility:"Agile", description:"")
 Card.create(name:"Yaevinn", deck:"Scoia'tael", role:"Basic", strength:6, combatType:"Melee / Range", cardAbility:"Agile", description:"")
 
-# Test users
+# Hardcoded admin account
 User.create(username:"Drake", password:"copperdog1", password_confirmation: "copperdog1", admin: true)
-User.create(username:"Bill", password:"Billiam", password_confirmation: "Billiam")
-User.create(username:"Frank", password:"I'veCoveredWarsYouKnow", password_confirmation: "I'veCoveredWarsYouKnow")
+# Test users
+#User.create(username:"Bill", password:"Billiam", password_confirmation: "Billiam")
+#User.create(username:"Frank", password:"I'veCoveredWarsYouKnow", password_confirmation: "I'veCoveredWarsYouKnow")
 
-99.times do |n|
-  name    = Faker::Name.name
-  password= "password"
-  User.create!(username:  name,
-               password:               password,
-               password_confirmation:  password)
-end
+# Uncomment to populate the database with lots of fake users
+#99.times do |n|
+#  name    = Faker::Name.name
+#  password= "password"
+#  User.create!(username:  name,
+#               password:               password,
+#               password_confirmation:  password)
+#end
 # A test deck
-Deck.create(deckName:"My First Deck", faction:"Monsters", user:User.find(1))
+#Deck.create(deckName:"My First Deck", faction:"Monsters", user:User.find(1))
 # A couple of cards in the test deck
-DeckCard.create(deck:Deck.find(1), card:Card.find(1))
-DeckCard.create(deck:Deck.find(1), card:Card.find(1))
-DeckCard.create(deck:Deck.find(1), card:Card.find(2))
+#DeckCard.create(deck:Deck.find(1), card:Card.find(1))
+#DeckCard.create(deck:Deck.find(1), card:Card.find(1))
+#DeckCard.create(deck:Deck.find(1), card:Card.find(2))
   
