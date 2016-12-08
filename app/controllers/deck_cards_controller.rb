@@ -1,5 +1,6 @@
 class DeckCardsController < ApplicationController
   before_action :set_deck_card, only: [:show, :update, :destroy]
+  before_action :admin_user, only: [:new, :edit, :update]
 
   # GET /deck_cards/new
   def new
@@ -20,7 +21,8 @@ class DeckCardsController < ApplicationController
       flash[:success] = "Card successfully added to deck!"
       redirect_to @deck_card.deck
     else
-      redirect_to @deck_card.card
+      flash[:danger] = "Card and deck are not compatible"
+      redirect_to @card
     end
   end
 

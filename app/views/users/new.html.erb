@@ -7,9 +7,15 @@
       
       <%= f.label :username %>
       <%= f.text_field :username, class: 'form-control' %>
+      <small id="usernameHelpInline" class="text-muted">
+        Must be less than 30 characters long.
+      </small>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
+      <small id="passwordHelpInline" class="text-muted">
+        Must be 6-25 characters long.
+      </small>
 
       <%= f.label :password_confirmation, "Confirm your password" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
